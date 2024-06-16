@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "Image Rotator",
+    "version": "1.0",
+    "description": "Rotate an image on a new tab",
+    "permissions": [
+        "activeTab"
+      ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "faec.png",
+        "48": "faec.png",
+        "128": "faec.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "16": "faec.png",
+      "48": "faec.png",
+      "128": "faec.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["newtab.js", "script.js"]
+        }
+      ],
+    "chrome_url_overrides": {
+      "newtab": "newtab.html"
+    }
+  }
+  
